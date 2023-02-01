@@ -1,0 +1,87 @@
+$backgroundColor: #090909
+$primaryFont: 'Syncopate', sans-serif
+$secondaryFont: 'Sora', sans-serif
+$pageWidth: 1200px
+$sectionMaxHeight: 1000px
+
+@function text-stroke($size: 2, $color: #fff, $correction: 0)
+  $radius: $size - $correction
+  $stroke: ()
+
+  @for $i from -$size through $size
+    @for $k from -$size through $size
+      $x: $k
+      $y: $i
+
+      @if $k > 0
+        $x: $k - 0.5
+      @else if $k < 0
+        $x: $k + 0.5
+
+      @if $i > 0
+        $y: $i - 0.5
+      @else if $i < 0
+        $y: $i + 0.5
+
+      @if ($x*$x + $y*$y <= $radius*$radius)
+        $stroke: append($stroke, $i*1px $k*1px 0 $color, comma)
+
+  @return $stroke
+
+
+@mixin text-stroke($size: 2, $color: #fff, $correction: 0)
+  text-shadow: text-stroke($size, $color, $correction)
+
+@keyframes fadeInTop
+  0%
+    opacity: 0
+    top: -1.5rem
+
+  100%
+    opacity: 1
+    top: 0
+
+@keyframes fadeInBottom
+  0%
+    opacity: 0
+    bottom: -5rem
+
+  100%
+    opacity: 1
+    bottom: 0
+
+@keyframes fadeInSectionTitle
+  0%
+    opacity: 0
+    left: -3rem
+
+  100%
+    opacity: 1
+    left: 0
+
+@keyframes fadeInName
+  0%
+    opacity: 0
+    left: -5rem
+
+  100%
+    opacity: 1
+    left: 0
+
+@keyframes fadeInJob
+  0%
+    opacity: 0
+    left: 216px
+
+  100%
+    opacity: 1
+    left: 200px
+
+@keyframes fadeInPicture
+  0%
+    opacity: 0
+    bottom: -5rem
+
+  100%
+    opacity: 1
+    bottom: 0
