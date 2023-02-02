@@ -1,0 +1,49 @@
+@import "constants"
+
+.contact_section
+  .section_wrapper
+    padding: 10rem 5rem
+
+    .contacts_grid
+      display: grid
+      grid-template-columns: repeat(2, 200px)
+      gap: 2rem
+
+      .contact
+        font-family: $secondaryFont
+        opacity: 0
+        position: relative
+
+        &.animate
+          opacity: 1
+          animation: fadeInBottom .5s ease-out
+
+        &:last-child
+          grid-column-start: 1
+          grid-column-end: 3
+
+        h4
+          font-weight: 300
+          opacity: .8
+          color: #ffffff
+          font-size: 1rem
+
+        a
+          color: #ffffff
+          font-size: 1.5rem
+          text-decoration: none
+          font-weight: 500
+          transition: opacity .2s ease-out
+
+          &:hover
+            opacity: .7
+
+    @media only screen and (max-width: 500px)
+      padding: 10rem 2rem
+
+      .contacts_grid
+        grid-template-columns: 1fr
+
+        .contact:last-child
+          grid-column-start: 1
+          grid-column-end: 2

@@ -1,0 +1,79 @@
+@import "constants"
+
+.header
+  width: 100%
+  display: flex
+  justify-content: center
+  background-color: $backgroundColor
+  position: fixed
+  top: 0
+  left: 0
+  z-index: 5
+  box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8)
+
+  .header_wrapper
+    width: $pageWidth
+    max-width: $pageWidth
+    padding: 1rem 0
+    position: relative
+    animation: fadeInTop .3s ease-out
+
+    &.hidden
+      animation: none
+
+    ul
+      list-style-type: none
+
+      li
+        font-family: $secondaryFont
+        font-size: 1rem
+        float: left
+        margin-right: 1rem
+        position: relative
+
+        &.hamburger
+          width: 2rem
+          height: 2rem
+          position: relative
+          cursor: pointer
+          display: none
+
+          &::after,
+          &::before
+            content: ""
+            width: 100%
+            height: 2px
+            background-color: #fff
+            position: absolute
+
+          &::after
+            top: 25%
+            transform: translateY(-50%)
+
+          &::before
+            bottom: 25%
+            transform: translateY(-50%)
+
+        a
+          display: inline-block
+          padding: .5rem 1rem
+          text-decoration: none
+          color: #fff
+          line-height: 2
+          position: relative
+          transition: opacity .2s ease-out
+
+          &:hover
+            opacity: .7
+
+  @media only screen and (max-width: 1250px)
+    .header_wrapper
+      padding: 1rem 2rem
+
+  @media only screen and (max-width: 600px)
+    .header_wrapper ul
+      li:not(.hamburger)
+        display: none
+
+      li.hamburger
+        display: block

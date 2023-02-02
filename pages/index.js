@@ -8,9 +8,11 @@ import Skills from '../components/skills'
 import Projects from '../components/projects'
 import Contact from '../components/contact'
 import Copyright from '../components/copyright'
+import SidePanel from "../components/side-panel";
 
 export default () => {
     const [pageLoaded, setPageLoaded] = useState(false)
+    const [showSidePanel, setShowSidePanel] = useState(false)
 
     useEffect(() => {
         const pageLoad = () => setPageLoaded(true)
@@ -48,7 +50,8 @@ export default () => {
                 <title>Fatih EGE</title>
             </Head>
             <div className={styles.container}>
-                <Header pageLoaded={pageLoaded}/>
+                <Header pageLoaded={pageLoaded} sidePanel={setShowSidePanel}/>
+                <SidePanel show={showSidePanel} sidePanel={setShowSidePanel}/>
                 <Home/>
                 <About/>
                 <Skills/>

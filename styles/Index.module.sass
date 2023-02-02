@@ -1,4 +1,11 @@
 @import "constants"
+@import "Header.module"
+@import "SidePanel.module"
+@import "Home.module"
+@import "About.module"
+@import "Skills.module"
+@import "Projects.module"
+@import "Contact.module"
 
 .container
   background-color: $backgroundColor
@@ -7,51 +14,8 @@
   overflow-x: hidden
   overflow-y: auto
 
-  .header
-    width: 100%
-    display: flex
-    justify-content: center
-    background-color: $backgroundColor
-    position: fixed
-    top: 0
-    left: 0
-    z-index: 5
-    box-shadow: 0 0 20px 5px rgba(0, 0, 0, 0.8)
-
-    .header_wrapper
-      width: $pageWidth
-      max-width: $pageWidth
-      padding: 1rem 0
-      position: relative
-      animation: fadeInTop .3s ease-out
-
-      &.hidden
-        animation: none
-
-      ul
-        list-style-type: none
-
-        li
-          font-family: $secondaryFont
-          font-size: 1rem
-          float: left
-          margin-right: 1rem
-          position: relative
-
-          a
-            display: inline-block
-            padding: .5rem 1rem
-            text-decoration: none
-            color: #fff
-            line-height: 2
-            position: relative
-            transition: opacity .2s ease-out
-
-            &:hover
-              opacity: .7
   .section
     width: 100%
-    max-height: $sectionMaxHeight
     display: flex
     justify-content: center
     overflow: hidden
@@ -64,6 +28,9 @@
       position: relative
       opacity: 0
       margin-bottom: 3rem
+
+      @media only screen and (max-width: 380px)
+        font-size: 2rem
 
       &.animate
         opacity: 1
@@ -81,236 +48,8 @@
     .section_wrapper
       width: $pageWidth
       max-width: $pageWidth
-      max-height: $sectionMaxHeight
+      max-height: max-content
       position: relative
-
-    &.home_section
-      .section_wrapper
-        height: 100vh
-
-      .name
-        font-family: $primaryFont
-        font-size: 10rem
-        position: absolute
-        bottom: 300px
-
-        .first_name
-          opacity: 0
-          position: relative
-          @supports (-webkit-text-stroke: 2px #ffffff)
-            -webkit-text-stroke: 2px #ffffff
-            color: transparent
-
-          @supports not (-webkit-text-stroke: 2px #ffffff)
-            color: #ffffff
-
-        .last_name
-          opacity: 0
-          position: relative
-          color: #ffffff
-
-        .animate
-          opacity: 1
-          animation: fadeInName .5s ease-out
-
-      .job
-        font-size: 1rem
-        font-weight: 400
-        font-family: $secondaryFont
-        color: #ffffff
-        position: absolute
-        left: 200px
-        bottom: 300px
-        opacity: 0
-
-        &.animate
-          opacity: 1
-          animation: fadeInJob .5s ease-out
-
-      .picture
-        width: auto
-        height: 1000px
-        position: absolute
-        bottom: 0
-        right: -190px
-        z-index: 0
-        pointer-events: none
-        opacity: 0
-
-        &.animate
-          opacity: 1
-          animation: fadeInPicture .5s ease-out
-
-    &.about_section
-      .section_wrapper
-        padding: 10rem 5rem
-
-        p
-          font-size: 1rem
-          font-family: $secondaryFont
-          font-weight: 500
-          color: #ffffff
-          line-height: 1.5
-          text-indent: 1rem
-          opacity: 0
-          position: relative
-
-          &.animate
-            opacity: 1
-            animation: fadeInBottom .5s ease-out
-
-    &.skills_section
-      .section_wrapper
-        padding: 10rem 5rem
-
-        .skills_grid
-          display: grid
-          grid-template-columns: repeat(4, 150px)
-          gap: 2.5rem
-          position: relative
-          opacity: 0
-
-          &.animate
-            opacity: 1
-            animation: fadeInBottom .5s ease-out
-
-          .skill
-            display: flex
-            flex-direction: column
-            justify-content: center
-            align-items: center
-            padding: 2rem 1rem
-            border: 2px solid #ffffff
-            border-radius: 1rem
-            cursor: default
-            box-shadow: 0 8px 16px 0 rgba(157, 157, 157, 0.2)
-            outline: 0 solid #ffffff
-            transition: box-shadow .2s ease-out, outline-width .1s ease-out
-
-            &:hover
-              box-shadow: 0 0 0 0 transparent
-              outline-width: 5px
-
-            .skill_icon
-              width: 2.5rem
-              margin-bottom: 1rem
-
-            .skill_title
-              color: #ffffff
-              font-family: $secondaryFont
-              font-size: 1rem
-              font-weight: 500
-
-    &.projects_section
-      .section_wrapper
-        padding: 10rem 5rem
-
-        .section_title
-          margin-bottom: 0
-
-        .other_projects,
-        .other_projects a
-          font-size: 1rem
-          font-family: $secondaryFont
-          color: transparentize(#ffffff, .1)
-          margin-bottom: 2rem
-          font-weight: 400
-          opacity: 0
-          position: relative
-
-          a
-            font-weight: 500
-
-          &.animate
-            opacity: 1
-            animation: fadeInTop .3s ease-out
-
-            a
-              opacity: 1
-
-        .projects
-          position: relative
-          opacity: 0
-
-          &.animate
-            opacity: 1
-            animation: fadeInBottom .5s ease-out
-
-          .project
-            width: 100%
-            color: #ffffff
-            text-decoration: none
-            padding: .5rem 1rem .5rem 3rem
-            display: block
-            margin-bottom: 1.5rem
-
-            &:hover .project_title::before
-              background-color: #ffffff
-
-            .project_title
-              font-size: 1.5rem
-              font-family: $secondaryFont
-              font-weight: 600
-              position: relative
-              line-height: 1
-
-              &::before
-                content: ""
-                position: absolute
-                width: 2rem
-                height: 2rem
-                border: 2px solid #ffffff
-                border-radius: 100%
-                top: 50%
-                left: -3rem
-                transform: translateY(-50%)
-                background-color: transparent
-                transition: background-color .15s ease-out
-
-            .project_description
-              font-size: 1rem
-              font-family: $secondaryFont
-              opacity: .7
-              margin-top: .5rem
-              font-weight: 400
-
-    &.contact_section
-      .section_wrapper
-        padding: 10rem 5rem
-
-        .contacts_grid
-          display: grid
-          grid-template-columns: repeat(2, 200px)
-          gap: 2rem
-
-          .contact
-            font-family: $secondaryFont
-            opacity: 0
-            position: relative
-
-            &.animate
-              opacity: 1
-              animation: fadeInBottom .5s ease-out
-
-            &:last-child
-              grid-column-start: 1
-              grid-column-end: 3
-
-            h4
-              font-weight: 300
-              opacity: .8
-              color: #ffffff
-              font-size: 1rem
-
-            a
-              color: #ffffff
-              font-size: 1.5rem
-              text-decoration: none
-              font-weight: 500
-              transition: opacity .2s ease-out
-
-              &:hover
-                opacity: .7
 
   .copyright
     width: 100%
