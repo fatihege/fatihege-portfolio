@@ -75,8 +75,8 @@ export default () => {
                     You can find my other projects on my <a href="https://github.com/fatihege" target="_blank">GitHub account</a>.
                 </p>
                 <div className={`${styles.projects} ${canAnimateList ? styles.animate : ''}`}>
-                    {projects.map(p => (
-                        <a href={p.url} target="_blank" className={styles.project}>
+                    {projects.map((p, i) => (
+                        <a href={p.url} target="_blank" className={styles.project} key={i}>
                             <h3 className={styles.project_title}>{p.title}</h3>
                             <p className={styles.project_description}>{p.description}</p>
                         </a>
