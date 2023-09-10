@@ -20,7 +20,6 @@ export default () => {
                     <span className={`${styles.last_name} ${canAnimateLastName ? styles.animate : ''}`}>ege</span>
                 </h1>
                 <h2 className={`${styles.job} ${canAnimateJob ? styles.animate : ''}`}>developer / designer since 2019</h2>
-                <img src="/me.png" alt="Fatih EGE" className={`${styles.picture} ${canAnimate ? styles.animate : ''}`}/>
             </div>
         </div>
     )
