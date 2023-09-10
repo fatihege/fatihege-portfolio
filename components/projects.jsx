@@ -8,6 +8,11 @@ export default () => {
     const [canAnimateList, setCanAnimateList] = useState(false)
     const projects = [
         {
+            url: 'https://github.com/fatihege/rival-music',
+            title: 'Rival Music',
+            description: 'Rival is a MERN-based music streaming application that uses the HLS protocol.',
+        },
+        {
             url: 'https://github.com/fatihege/next-todo',
             title: 'Next.js Todo App',
             description: 'I developed a Todo List application using the MERN stack.',
