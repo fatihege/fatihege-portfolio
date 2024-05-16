@@ -38,7 +38,7 @@ export default () => {
                     <span className={styles.stroke_title}>about</span> me
                 </h2>
                 <p className={canAnimateParagraph ? styles.animate : ''}>
-                    My name is Fatih EGE, I was born in November 2006. I have been developing myself in the software
+                    My name is Fatih EGE, I was born in 2006. I have been developing myself in the software
                     development branch since I was 13 (2019). On the way I started with web design, I am now a
                     professional web developer. I've been working with HTML, CSS, JavaScript (Node.js, React, Next.js
                     etc.) for a long time. Apart from these, I know beginner-intermediate level TypeScript, PHP and C++
