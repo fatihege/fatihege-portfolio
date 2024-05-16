@@ -52,7 +52,7 @@ export default () => {
                     </div>
                     <div className={`${styles.contact} ${canAnimateDiscord ? styles.animate : ''}`}>
                         <h4>Discord</h4>
-                        <a href="https://discordapp.com/users/799520588485361675" target="_blank">fatxh#0001</a>
+                        <a href="https://discordapp.com/users/799520588485361675" target="_blank">@fatxh.</a>
                     </div>
                     <div className={`${styles.contact} ${canAnimateLinkedIn ? styles.animate : ''}`}>
                         <h4>LinkedIn</h4>
