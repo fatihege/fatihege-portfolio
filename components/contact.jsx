@@ -60,7 +60,7 @@ export default () => {
                     </div>
                     <div className={`${styles.contact} ${canAnimateInstagram ? styles.animate : ''}`}>
                         <h4>Instagram</h4>
-                        <a href="https://www.instagram.com/ifatxh" target="_blank">@ifatxh</a>
+                        <a href="https://www.instagram.com/fatihsteinn" target="_blank">@fatihsteinn</a>
                     </div>
                     <div className={`${styles.contact} ${canAnimateEmail ? styles.animate : ''}`}>
                         <h4>Email</h4>
